@@ -8,12 +8,22 @@ export const PREFS = config.preferences;
 export function proxyImage(url, origin) {
   if (!url) return null;
   const full = url.replace("-large", "-t500x500");
-  return `${origin}/api/proxy/image?url=${encodeURIComponent(full)}`;
+
+  if (PREFS.proxyImages) {
+    return `${origin}/api/proxy/image?url=${encodeURIComponent(full)}`;
+  } else {
+    return `${BASE}/_/proxy/images?url=${encodeURIComponent(full)}`;
+  }
 }
 
 export function proxyStream(url, origin) {
   if (!url) return null;
-  return `${origin}/api/proxy/stream?url=${encodeURIComponent(url)}`;
+
+  if (PREFS.proxyStreams) {
+    return `${origin}/api/proxy/stream?url=${encodeURIComponent(url)}`;
+  } else {
+    return url;
+  }
 }
 
 export function scHref(userPermalink, trackPermalink) {

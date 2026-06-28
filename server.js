@@ -634,6 +634,10 @@ app.get('/api/tags/:tag/playlists', async (req, res) => {
 const ALLOWED_HOSTS = ["sc1.maid.zone"];
 
 app.get('/api/proxy/stream', async (req, res) => {
+  if (!config.preferences.proxyStreams) {
+    return res.status(403).json({ error: "Stream proxying is disabled in config" });
+  }
+
   const target = req.query.url;
 
   if (!target) {
@@ -673,6 +677,10 @@ app.get('/api/proxy/stream', async (req, res) => {
 });
 
 app.get('/api/proxy/image', async (req, res) => {
+  if (!config.preferences.proxyImages) {
+    return res.status(403).json({ error: "Image proxying is disabled in config" });
+  }
+
   const target = req.query.url;
 
   if (!target) {
@@ -736,5 +744,5 @@ function formatComment(c, origin) {
 }
 
 app.listen(PORT, () => {
-  console.log(`SoundCloud API server running on port https://localhost:${PORT}`);
+  console.log(`SoundCloud API server running on port http://localhost:${PORT}`);
 });
