@@ -21,22 +21,19 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
 
-          rm -rf hf-space
-
           echo "Cloning HF Space..."
           git clone https://oauth2:$HF_TOKEN@huggingface.co/spaces/1c34/soundcloak hf-space
 
-          echo "Copying files..."
-          rsync -av --delete --exclude='.git' ./ hf-space/
-
           cd hf-space
 
-          echo "Status:"
-          git status
+          echo "Syncing files via git (clean replace)..."
+
+          rsync -av \
+            --delete \
+            --exclude='.git' \
+            --exclude='hf-space' \
+            ../ .
 
           git add -A
-
           git commit -m "deploy" --allow-empty
-
-          echo "Pushing..."
-          git push -v --force
+          git push
