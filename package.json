@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "JSON REST API wrapper for soundcloak (SoundCloud privacy frontend)",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "wrangler pages dev public --compatibility-date=2024-01-01",
-    "deploy": "wrangler pages deploy public",
-    "preview": "wrangler pages dev public"
+    "dev": "node server.js",
+    "start": "node server.js",
+    "docker:build": "docker build -t soundcloak-api .",
+    "docker:run": "docker run -p 7860:7860 soundcloak-api"
   },
-  "devDependencies": {
-    "wrangler": "^3.0.0"
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }

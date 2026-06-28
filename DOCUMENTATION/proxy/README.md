@@ -1,6 +1,6 @@
 # Proxy
 
-These endpoints exist to serve proxied media through your Cloudflare Pages domain, avoiding direct links to SoundCloud CDN infrastructure. All `artwork` and `stream_url` fields in API responses already point here.
+These endpoints exist to serve proxied media through your domain, avoiding direct links to SoundCloud CDN infrastructure. All `artwork` and `stream_url` fields in API responses already point here.
 
 ## `GET /api/proxy/image`
 

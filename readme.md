@@ -1,29 +1,19 @@
+---
+title: soundcloak-api
+emoji: 🎵
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+license: mit
+---
+
 ![Banner](/public/assets/banner.png)
 
 # soundcloak-api
 
-A JSON REST API wrapper for [soundcloak](https://git.maid.zone/stuff/soundcloak) — a SoundCloud privacy frontend. Deploy it to Cloudflare Pages in minutes.
-
-## Setup
-
-1. Clone the repo
-2. Edit `config.json` to point at your soundcloak instance
-3. Deploy to Cloudflare Pages with `npm run deploy`
-
-```json
-{
-  "instance": "https://sc1.maid.zone",
-  "preferences": {
-    "restreamAudio": "mp3"
-  },
-  "pagination": {
-    "defaultLimit": 20,
-    "maxLimit": 50
-  }
-}
-```
-
-## Endpoints
+A JSON REST API wrapper for [soundcloak](https://git.maid.zone/stuff/soundcloak) — a SoundCloud privacy frontend.
 
 | Method | Path | Description |
 |--------|------|-------------|
@@ -66,7 +56,8 @@ The playlist endpoint additionally supports `?pagination=id1,id2,...` for fetchi
 
 ## Stack
 
-- **Runtime:** Cloudflare Pages Functions
+- **Runtime:** Node.js with Express
+- **Container:** Docker with Alpine Linux
 - **Upstream:** soundcloak `/api/v2` proxy
 - **Config:** `config.json` at project root
 
