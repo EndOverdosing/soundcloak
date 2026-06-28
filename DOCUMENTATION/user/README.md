@@ -12,7 +12,7 @@ Returns a full user profile with follower/following counts, links to their sound
   "permalink": "jaydes",
   "username": "true indieground",
   "full_name": null,
-  "avatar": "https://your-api/api/proxy/image?url=...",
+  "avatar": "https://sc1.maid.zone/_/proxy/images?url=...",
   "verified": false,
   "soundcloud_url": "https://soundcloud.com/jaydes",
   "description": null,
@@ -23,21 +23,21 @@ Returns a full user profile with follower/following counts, links to their sound
   "playlists": 11,
   "created_at": null,
   "last_modified": "2026-06-22T05:10:57Z",
-  "links": [
-    { "title": "Website", "url": "https://example.com" }
-  ],
   "station_urn": "soundcloud:system-playlists:artist-stations:990146308",
   "rss_url": "https://sc1.maid.zone/_/rss/jaydes",
   "links": {
     "tracks": "https://your-api/api/user/jaydes/tracks",
     "popular_tracks": "https://your-api/api/user/jaydes/popular-tracks",
     "playlists": "https://your-api/api/user/jaydes/playlists",
+    "sets": "https://your-api/api/user/jaydes/playlists",
     "albums": "https://your-api/api/user/jaydes/albums",
     "reposts": "https://your-api/api/user/jaydes/reposts",
     "likes": "https://your-api/api/user/jaydes/likes",
     "followers": "https://your-api/api/user/jaydes/followers",
     "following": "https://your-api/api/user/jaydes/following",
-    "related": "https://your-api/api/user/jaydes/related"
+    "related": "https://your-api/api/user/jaydes/related",
+    "station": "https://your-api/api/station/soundcloud%3Asystem-playlists%3Aartist-stations%3A990146308",
+    "rss_feed": "https://sc1.maid.zone/_/rss/jaydes"
   }
 }
 ```
